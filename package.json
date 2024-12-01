@@ -47,7 +47,7 @@
   "dependencies": {
     "commander": "^12.1.0",
     "msgpackr": "^1.11.2",
-    "winston": "^3.16.0"
+    "winston": "^3.17.0"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^19.5.0",
