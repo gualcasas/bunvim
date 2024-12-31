@@ -30,5 +30,5 @@
     "checkJs": true,
     "esModuleInterop": true
   },
-  "include": ["src", "./package.json"]
+  "include": ["src", "test", "./package.json"]
 }
