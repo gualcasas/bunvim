@@ -198,7 +198,7 @@ export async function attach<ApiInfo extends BaseEvents = BaseEvents>({
             requestHandlers.set(method as string, callback);
         },
         detach() {
-            nvimSocket.end();
+            nvimSocket.destroy();
         },
     };
 }
