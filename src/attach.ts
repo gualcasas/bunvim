@@ -15,7 +15,6 @@ import {
 } from "./types.ts";
 
 const packr = new Packr({ useRecords: false });
-const unpackrStream = new UnpackrStream({ useRecords: false });
 
 [0, 1, 2].forEach((type) => {
     // https://neovim.io/doc/user/api.html#api-definitions
@@ -42,6 +41,7 @@ export async function attach<ApiInfo extends BaseEvents = BaseEvents>({
     let lastReqId = 0;
     let handlerId = 0;
 
+    const unpackrStream = new UnpackrStream({ useRecords: false });
     const nvimSocket = await new Promise<net.Socket>((resolve, reject) => {
         const client = new net.Socket();
         client.once("error", reject);
@@ -199,6 +199,7 @@ export async function attach<ApiInfo extends BaseEvents = BaseEvents>({
         },
         detach() {
             nvimSocket.destroy();
+            unpackrStream.end();
         },
     };
 }
