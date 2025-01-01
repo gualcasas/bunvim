@@ -56,7 +56,7 @@
     "@typescript-eslint/eslint-plugin": "^8.12.2",
     "@typescript-eslint/parser": "^8.13.0",
     "commitizen": "^4.3.1",
-    "commitlint": "^19.5.0",
+    "commitlint": "^19.6.1",
     "eslint": "^8.57.1",
     "prettier": "^3.3.3",
     "prettier-plugin-organize-imports": "^4.1.0",
