@@ -86,7 +86,7 @@ export type AttachParams = {
      * @example
      * ```lua
      * -- init.lua
-     * vim.fn.jobstart("bun run src/main.ts", { cwd = root_dir })
+     * vim.fn.jobstart("npm run src/main.ts", { cwd = root_dir })
      * ```
      *
      * ```typescript
@@ -112,7 +112,7 @@ export type AttachParams = {
     logging?: {
         /**
          * @remarks
-         * bunvim internally logs with `logger.debug()` and `logger.error()`
+         * node internally logs with `logger.debug()` and `logger.error()`
          * Set logLevel higher than `debug` to not display bunvim's internal logs
          *
          * Levels from highest to lowest priority

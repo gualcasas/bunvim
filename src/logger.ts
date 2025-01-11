@@ -8,7 +8,7 @@ export function createLogger(
 ) {
     if (!logging?.level) return;
 
-    const defaultFilePath = `/tmp/${client.name}.bunvim.logs`;
+    const defaultFilePath = `/tmp/${client.name}.node.logs`;
 
     const logger = winston.createLogger({
         level: logging.level,

@@ -1,18 +1,16 @@
-#!/usr/bin/env bun
 import { program } from "commander";
+import { spawn } from "node:child_process";
 import { version } from "../../package.json";
 
-program.name("bunvim").description("CLI to work with neovim's bun client").version(version);
+program.name("nvim-node").description("CLI to work with neovim's node client").version(version);
 
 program
     .command("logs")
-    .description("print bunvim client logs")
+    .description("print nvim-node client logs")
     .argument("<client_name>", "Client name you specify in your attach call.")
     .action((name) => {
-        Bun.spawn({
-            cmd: ["tail", "-F", "-n", "0", `/tmp/${name}.bunvim.logs`],
-            stdin: null,
-            stdout: "inherit",
+        spawn("tail", ["-F", "-n", "0", `/tmp/${name}.node.logs`], {
+            stdio: ["ignore", "inherit", "inherit"],
         });
     })
     .exitOverride(() => process.exit(0));

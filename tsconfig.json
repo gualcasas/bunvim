@@ -5,7 +5,7 @@
     "target": "ESNext",
     "moduleResolution": "Bundler",
     "moduleDetection": "force",
-    "types": ["bun-types"],
+    "types": [],
     "allowImportingTsExtensions": true,
     "noEmit": true,
     "strict": true,
@@ -30,5 +30,5 @@
     "checkJs": true,
     "esModuleInterop": true
   },
-  "include": ["src", "./package.json"]
+  "include": ["src", "test", "./package.json"]
 }
