@@ -2,7 +2,7 @@
   "name": "nvim-node",
   "author": "dlants",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "description": "minimalist neovim client for node",
   "repository": {
@@ -10,7 +10,10 @@
     "url": "git://github.com/dlants/nvim-node.git"
   },
   "exports": {
-    "types": "./src/index.ts"
+    ".": {
+      "default": "./src/index.ts",
+      "types": "./src/index.ts"
+    }
   },
   "release": {
     "branches": [
