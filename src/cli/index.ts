@@ -1,16 +1,16 @@
-#!/usr/bin/env bun
+#!/usr/bin/env node --import @swc-node/register/esm-register script.ts
 import { program } from "commander";
 import { version } from "../../package.json";
 
-program.name("bunvim").description("CLI to work with neovim's bun client").version(version);
+program.name("nvim-node").description("CLI to work with neovim's node client").version(version);
 
 program
     .command("logs")
-    .description("print bunvim client logs")
+    .description("print nvim-node client logs")
     .argument("<client_name>", "Client name you specify in your attach call.")
     .action((name) => {
         Bun.spawn({
-            cmd: ["tail", "-F", "-n", "0", `/tmp/${name}.bunvim.logs`],
+            cmd: ["tail", "-F", "-n", "0", `/tmp/${name}.node.logs`],
             stdin: null,
             stdout: "inherit",
         });

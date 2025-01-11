@@ -1,20 +1,16 @@
 {
-  "name": "bunvim",
-  "author": "wallpants",
+  "name": "nvim-node",
+  "author": "dlants",
   "type": "module",
   "version": "0.0.0",
   "license": "MIT",
-  "description": "Neovim bun client",
+  "description": "minimalist neovim client for node",
   "repository": {
     "type": "git",
-    "url": "git://github.com/wallpants/bunvim.git"
-  },
-  "bin": {
-    "bunvim": "src/cli/index.ts"
+    "url": "git://github.com/dlants/nvim-node.git"
   },
   "exports": {
-    "types": "./src/index.ts",
-    "bun": "./src/index.ts"
+    "types": "./src/index.ts"
   },
   "release": {
     "branches": [
@@ -38,13 +34,13 @@
   },
   "scripts": {
     "commit": "cz",
-    "vi": "nvim",
     "format": "prettier **/*.{md,ts,yml} -w",
     "lint": "eslint . --ext ts --report-unused-disable-directives --max-warnings 0",
     "typecheck": "tsc",
-    "check": "bun run typecheck && bun run lint"
+    "check": "npm run typecheck && npm run lint"
   },
   "dependencies": {
+    "@types/node": "^22.10.5",
     "commander": "^12.1.0",
     "msgpackr": "^1.11.2",
     "winston": "^3.16.0"
@@ -52,7 +48,7 @@
   "devDependencies": {
     "@commitlint/config-conventional": "^19.5.0",
     "@commitlint/cz-commitlint": "^19.5.0",
-    "@types/bun": "^1.1.12",
+    "@swc-node/register": "^1.10.9",
     "@typescript-eslint/eslint-plugin": "^8.12.2",
     "@typescript-eslint/parser": "^8.13.0",
     "commitizen": "^4.3.1",
@@ -61,6 +57,16 @@
     "prettier": "^3.3.3",
     "prettier-plugin-organize-imports": "^4.1.0",
     "semantic-release": "^24.2.0",
-    "typescript": "^5.6.3"
-  }
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.8"
+  },
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "bugs": {
+    "url": "https://github.com/dlants/nvim-node/issues"
+  },
+  "homepage": "https://github.com/dlants/nvim-node#readme"
 }

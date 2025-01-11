@@ -3,7 +3,7 @@ import { unlink } from "node:fs/promises";
 import { spawn } from "child_process";
 import path from "path";
 
-const SOCK = `/tmp/bunvim-test.sock`;
+const SOCK = `/tmp/nvim-node-test.sock`;
 export async function withNvimProcess(fn: (sock: string) => Promise<void>) {
   try {
     await unlink(SOCK);
@@ -51,7 +51,7 @@ export async function withNvimProcess(fn: (sock: string) => Promise<void>) {
 }
 
 export async function withNvimClient(fn: (nvim: Nvim) => Promise<void>) {
-  return await withNvimProcess(async (sock) => {
+  return withNvimProcess(async (sock) => {
     const nvim = await attach({
       socket: sock,
       client: { name: "test" },

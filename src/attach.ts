@@ -58,7 +58,7 @@ export async function attach<ApiInfo extends BaseEvents = BaseEvents>({
                     logger?.debug("connection closed by neovim");
                 })
                 .on("close", () => {
-                    logger?.debug("connection closed by bunvim");
+                    logger?.debug("connection closed by node");
                 });
             resolve(client);
         });

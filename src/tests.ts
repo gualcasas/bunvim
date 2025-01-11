@@ -15,7 +15,7 @@ type MyEvents = {
 const nvim = await attach<MyEvents>({
     socket: SOCKET,
     client: {
-        name: "bunvim",
+        name: "node",
         version: {
             minor: 0,
         },
